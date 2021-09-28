@@ -70,7 +70,7 @@ export default  {
 </script>
 
 
-<style>
+<style scoped>
 .header {
   position: relative;
   width: 80%;

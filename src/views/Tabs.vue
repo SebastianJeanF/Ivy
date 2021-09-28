@@ -1,12 +1,13 @@
 <template>
   <ion-page>
     <ion-fab vertical="bottom" horizontal="center" class="fab">
-     <ion-fab-button>
-          <ion-icon :icon="cameraFilled" @click="takePhoto()"></ion-icon>
+    
+     <ion-fab-button href="/tabs/tab3">
+          <ion-icon :icon="cameraFilled" ></ion-icon>
         </ion-fab-button>
     </ion-fab>
+
     <ion-tabs>
-      
       <ion-router-outlet></ion-router-outlet>
       <ion-tab-bar slot="bottom" class="bar"> 
         <ion-tab-button class="tabtest" tab="tab1" href="/tabs/tab1">
@@ -60,7 +61,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 :root {
   background: rgb(230,235,230);
 }

@@ -11,9 +11,13 @@
   },
   "dependencies": {
     "@capacitor/android": "2.4.4",
-    "@capacitor/core": "2.4.4",
+    "@capacitor/camera": "^1.1.0",
+    "@capacitor/core": "^3.0.0",
+    "@capacitor/filesystem": "^1.0.3",
     "@capacitor/ios": "2.4.4",
-    "@ionic/pwa-elements": "3.0.2",
+    "@capacitor/storage": "^1.2.0",
+    "@ionic/lab": "^3.2.10",
+    "@ionic/pwa-elements": "^3.0.2",
     "@ionic/vue": "5.5.2",
     "@ionic/vue-router": "5.5.2",
     "core-js": "^3.6.5",
@@ -22,7 +26,7 @@
     "vue-router": "^4.0.1"
   },
   "devDependencies": {
-    "@capacitor/cli": "2.4.4",
+    "@capacitor/cli": "^2.4.4",
     "@types/jest": "^24.0.19",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",

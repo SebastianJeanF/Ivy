@@ -41,7 +41,7 @@ import { IonPage, IonContent, IonThumbnail} from '@ionic/vue';
 
 
 export default {
-  name: 'Tab1',
+  name: 'homepage',
   components: { IonPage, IonContent, IonThumbnail},
 
 }

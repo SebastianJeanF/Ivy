@@ -116,6 +116,7 @@ export default  {
 
 .toolbar{
   --ion-background-color: #307442;
+  color: green;
 
     
 }

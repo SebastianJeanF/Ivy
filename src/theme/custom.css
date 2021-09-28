@@ -5,7 +5,10 @@ ion-tab-bar{
 
     
 }
-
+ion-toolbar{
+  --ion-background-color: green;
+  color: white;
+}
 ion-content{
   /* --ion-background-color: linear-gradient(rgb(245,245,245), rgb(230,235,230));  */
     /* --ion-background-color: linear-gradient(rgb(144, 255, 144), rgb(220, 247, 222)); */
