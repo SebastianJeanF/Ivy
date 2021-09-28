@@ -1,0 +1,13 @@
+ion-tab-bar{
+
+    border-radius: 15px 15px 0px 0px;
+    
+
+    
+}
+
+ion-content{
+  /* --ion-background-color: linear-gradient(rgb(245,245,245), rgb(230,235,230));  */
+    /* --ion-background-color: linear-gradient(rgb(144, 255, 144), rgb(220, 247, 222)); */
+    --ion-background-color: linear-gradient(rgb(245,245,245), rgb(205, 233, 205)); 
+}
