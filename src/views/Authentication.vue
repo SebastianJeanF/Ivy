@@ -2,7 +2,7 @@
   <ion-page>
 
     <ion-header>
-      <ion-toolbar>
+      <ion-toolbar class="test">
         <ion-title>Sign In/Up</ion-title>
       </ion-toolbar>
     </ion-header>
@@ -126,7 +126,7 @@ export default {
         await auth.signInWithEmailAndPassword(email, password);
         router.push("/tabs/tab1");
       } catch (error) {
-        state.errorMsg ="bruh";
+        state.errorMsg = error.message;
       }
     };
 
@@ -191,5 +191,8 @@ export default {
   background-color: #f8d7da;
   border-color: #f5c2c7;
   text-align: center;
+}
+.test{
+  
 }
 </style>

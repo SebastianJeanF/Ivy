@@ -1,66 +1,53 @@
 <template>
-<ion-page> <!-- Won't work without IonPage !-->
+<ion-page>
     <ion-content>
-        <ion-card>
-            <ion-card-header>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-            <ion-card-title>Card Title</ion-card-title>
-            </ion-card-header>
-
-            <ion-card-content>
-            Keep close to Nature's heart... and break clear away, once in awhile,
-            and climb a mountain or spend a week in the woods. Wash your spirit clean.
-            </ion-card-content>
-        </ion-card>
-
-        <ion-card>
-            <ion-item>
-            <ion-icon :icon="pin" slot="start"></ion-icon>
-            <ion-label>ion-item in a card, icon left, button right</ion-label>
-            <ion-button fill="outline" slot="end">View</ion-button>
-            </ion-item>
-
-            <ion-card-content>
-            This is content, without any paragraph or header tags,
-            within an ion-card-content element.
-            </ion-card-content>
-        </ion-card>
-
-        <ion-card>
-            <ion-item href="#" class="ion-activated">
-            <ion-icon :icon="wifi" slot="start"></ion-icon>
-            <ion-label>Card Link Item 1 activated</ion-label>
-            </ion-item>
-
-            <ion-item href="/tabs/tab5">
-            <ion-icon :icon="wine" slot="start"></ion-icon>
-            <ion-label>Card Link Item 2</ion-label>
-            </ion-item>
-
-            <ion-item class="ion-activated">
-            <ion-icon :icon="warning" slot="start"></ion-icon>
-            <ion-label>Card Button Item 1 activated</ion-label>
-            </ion-item>
-
-            <ion-item>
-            <ion-icon :icon="walk" slot="start"></ion-icon>
-            <ion-label>Card Button Item 2</ion-label>
-            </ion-item>
-        </ion-card>
+<swiper
+    :slides-per-view="3"
+    :space-between="50"
+    @swiper="onSwiper"
+    @slideChange="onSlideChange"
+  >
+    <swiper-slide class="b">Slide 1</swiper-slide>
+    <swiper-slide>Slide 2</swiper-slide>
+    <swiper-slide>Slide 3</swiper-slide>
+    ...
+  </swiper>
     </ion-content>
-    </ion-page>
+ </ion-page>
 </template>
 
-<script>
-import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonIcon, IonItem, IonLabel, IonContent, IonPage } from '@ionic/vue';
-import { pin, walk, warning, wifi, wine } from 'ionicons/icons';
 
+<script lang="ts">
+import { IonContent, IonPage } from '@ionic/vue';
+// import { defineComponent } from 'vue';
+// import { Swiper, SwiperSlide } from 'swiper/vue';
+//import 'swiper/css';
 
-export default {
-    name: "test",
-    components: { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonIcon, IonItem, IonLabel, IonContent, IonPage },
-    setup() {
-        return { warning, pin, walk, wifi, wine }
+export default ({
+  components: { IonContent, IonPage },
+  setup() {
+    // Optional parameters to pass to the swiper instance. See http://idangero.us/swiper/api/ for valid options.
+    const slideOpts = {
+      initialSlide: 1,
+      speed: 400
+    };
+    const onSwiper = (swiper: any) => {
+        console.log(swiper);
+      };
+      const onSlideChange = () => {
+        console.log('slide change');
+      };
+    return { 
+        slideOpts,
+        onSwiper,
+        onSlideChange, 
+    }
   }
-}
+});
 </script>
+
+<style scoped>
+.b {
+  padding: 20px
+}
+</style>

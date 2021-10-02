@@ -6,11 +6,11 @@ ion-tab-bar{
     
 }
 ion-toolbar{
-  --ion-background-color: green;
+  --background: #307442;
   color: white;
 }
 ion-content{
   /* --ion-background-color: linear-gradient(rgb(245,245,245), rgb(230,235,230));  */
     /* --ion-background-color: linear-gradient(rgb(144, 255, 144), rgb(220, 247, 222)); */
-    --ion-background-color: linear-gradient(rgb(245,245,245), rgb(205, 233, 205)); 
+    --background: linear-gradient(rgb(245,245,245), rgb(205, 233, 205)); 
 }

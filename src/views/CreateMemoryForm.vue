@@ -56,7 +56,7 @@ export default {
     IonButton,
     IonThumbnail,
     IonIcon,
-    IonPage,
+    IonPage, 
     IonContent
   },
   data() {

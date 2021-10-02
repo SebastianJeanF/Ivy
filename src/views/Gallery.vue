@@ -50,8 +50,8 @@ import {
 } from '@ionic/vue';
 import { usePhotoGallery, UserPhoto } from '@/composables/usePhoto';
 import { defineComponent} from 'vue';
-export default defineComponent({
-  name: 'Tab22',
+export default ({
+  name: 'Tab3',
   components: {
     IonHeader,
     IonFab,
@@ -67,7 +67,7 @@ export default defineComponent({
    IonImg
   },
   setup() {
-    const { photos, takePhoto, deletePhoto } = usePhotoGallery();
+    const { photos, takePhoto, deletePhoto} = usePhotoGallery();
 
     const showActionSheet = async (photo: UserPhoto) => {
       const actionSheet = await actionSheetController.create({
@@ -95,9 +95,9 @@ export default defineComponent({
     };
 
     return {
-    photos,
-    takePhoto,
-    showActionSheet,
+   photos,
+   takePhoto,
+   showActionSheet,
     camera,
     trash,
     close,

@@ -1,10 +1,11 @@
 <template>
   <ion-page>
     <ion-fab vertical="bottom" horizontal="center" class="fab">
-    
-     <ion-fab-button href="/tabs/tab3">
+      <router-link to="/tabs/tab3">
+     <ion-fab-button> <!-- href="/tabs/tab3" !-->
           <ion-icon :icon="cameraFilled" ></ion-icon>
         </ion-fab-button>
+      </router-link>
     </ion-fab>
 
     <ion-tabs>

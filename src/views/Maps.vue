@@ -52,8 +52,13 @@
 import { IonPage, IonContent, IonCard} from '@ionic/vue';
 
 export default  {
-  name: 'Tab5',
-  components: { IonPage, IonContent, IonCard}
+  name: 'Maps',
+  components: { IonPage, IonContent, IonCard},
+  methods: {
+    onFileSelector(event) {
+      console.log(event)
+    }
+  }
 };
 
 
