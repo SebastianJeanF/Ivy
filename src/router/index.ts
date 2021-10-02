@@ -40,11 +40,11 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'tab3',
-        component: () => import('@/views/test.vue')
+        component: () => import('@/views/Gallery.vue')
       },
       {
         path: 'tab4',
-        component: () => import('@/views/Gallery.vue')
+        component: () => import('@/views/Swiper.vue')
       },
       {
         path: 'tab5',

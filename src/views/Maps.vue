@@ -16,9 +16,14 @@
             
             <h3><b>Welcome to Ivy Finder!</b></h3>
           </header>
+          <swiper :pagination='true' class="mySwiper">
+            <swiper-slide>Slide 1<ion-card><ion-card-content><img src="./bladdernut.jpg"></ion-card-content></ion-card></swiper-slide>
+            <swiper-slide><ion-card><ion-card-content><img src="./test_mapCopy.png" style="width:400px;height:200px;"/></ion-card-content></ion-card>Slide 2</swiper-slide>
+            <swiper-slide>Slide 3</swiper-slide><swiper-slide>Slide 4</swiper-slide><swiper-slide>Slide 5</swiper-slide><swiper-slide>Slide 6</swiper-slide><swiper-slide>Slide 7</swiper-slide><swiper-slide>Slide 8</swiper-slide><swiper-slide>Slide 9</swiper-slide>
+        </swiper>
           <ion-card>
             <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d6664376.295274417!2d-94.0779643!3d35.353413!3m2!1i1024!2i768!4f13.1!2m1!1smaps!5e0!3m2!1sen!2sus!4v1631330695378!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> !-->
-            <img src="./test_mapCopy.png"/>
+            
            <!-- <iframe src="https://www.google.com/maps/d/u/0/embed?mid=10rOPOqfBfGt-RtjBfovC0Qk0VGxQlVek" width="640" height="480"></iframe> !-->
           </ion-card>
           <div id="map"></div>
@@ -49,11 +54,30 @@
 </template>
 
 <script>
-import { IonPage, IonContent, IonCard} from '@ionic/vue';
+import { IonPage, IonContent, IonCard, IonCardContent} from '@ionic/vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+
+// Import Swiper styles
+
+import 'swiper/swiper.min.css';
+//import 'swiper/css';
+
+import 'swiper/components/pagination/pagination.min.css';
+//import "swiper/css/pagination"
+
+import './style.css';
+
+
+// import Swiper core and required modules
+import SwiperCore, {
+  Pagination
+} from 'swiper';
+// install Swiper modules
+SwiperCore.use([Pagination]);
 
 export default  {
   name: 'Maps',
-  components: { IonPage, IonContent, IonCard},
+  components: { IonPage, IonContent, IonCard, IonCardContent, Swiper, SwiperSlide},
   methods: {
     onFileSelector(event) {
       console.log(event)
