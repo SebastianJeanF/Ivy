@@ -16,9 +16,11 @@
             
             <h3><b>Welcome to Ivy Finder!</b></h3>
           </header>
-          <swiper :pagination='true' class="mySwiper">
-            <swiper-slide>Slide 1<ion-card><ion-card-content><img src="./bladdernut.jpg"></ion-card-content></ion-card></swiper-slide>
-            <swiper-slide><ion-card><ion-card-content><img src="./test_mapCopy.png" style="width:400px;height:200px;"/></ion-card-content></ion-card>Slide 2</swiper-slide>
+          <swiper :spaceBetween="50" :slidesPerView="1" :navigation="true" :pagination="true" :history='{
+              "key": "slide"
+            }' class="mySwiper">
+            <swiper-slide>Slide 1<ion-card><ion-card-content><img src="./test_mapCopy.png" style="width:400px;height:200px;"></ion-card-content></ion-card></swiper-slide>
+            <swiper-slide><ion-card><ion-card-content><img src="./bladdernut.jpg" style="width:400px;height:200px;"/></ion-card-content></ion-card>Slide 2</swiper-slide>
             <swiper-slide>Slide 3</swiper-slide><swiper-slide>Slide 4</swiper-slide><swiper-slide>Slide 5</swiper-slide><swiper-slide>Slide 6</swiper-slide><swiper-slide>Slide 7</swiper-slide><swiper-slide>Slide 8</swiper-slide><swiper-slide>Slide 9</swiper-slide>
         </swiper>
           <ion-card>
@@ -65,15 +67,17 @@ import 'swiper/swiper.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 //import "swiper/css/pagination"
 
+import "swiper/components/navigation/navigation.min.css";
+
 import './style.css';
 
 
 // import Swiper core and required modules
 import SwiperCore, {
-  Pagination
+  Navigation,Pagination,History
 } from 'swiper';
 // install Swiper modules
-SwiperCore.use([Pagination]);
+SwiperCore.use([Navigation,Pagination,History]);
 
 export default  {
   name: 'Maps',

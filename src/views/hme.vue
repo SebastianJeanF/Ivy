@@ -5,7 +5,7 @@
         <ion-title class="titcle">Welcome to IvyFinder</ion-title>    
    </ion-toolbar> 
   </ion-header> !-->
-    <ion-content class="content">
+    <ion-content class="pages">
         
             <div class="custom-shape-divider-top-1631325369">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -17,20 +17,22 @@
             <div></div>
             <h3><b>Welcome to IvyFinder!</b></h3>
           </header>
+          <div>lolll</div>
+          <ion-title>lol</ion-title>
+          <ion-title class="title">Explore</ion-title>
 
-          <!-- <ion-ttle class="title">Explore</ion-ttle> !-->
 
-
-
-          <div class="container">
-		<swiper :spaceBetween="30" :pagination='{
-  "clickable": true
-}' class="mySwiper swiperswiper">
+	
+	
+			
+		
+         <div class="container">
+		<swiper :pagination="true" class="mySwiper swiperswiper">
 			<swiper-slide class="swiperswipderslide">
-		<div class="cards cards1">
+		<div class="cards">
 			<div class="imgBox">
 				<div>
-					<ion-icon :icon="medkitFilled"/>
+					<img src="design.png"/>
 					<h2>Design</h2>
 				</div>
 			</div>
@@ -46,10 +48,10 @@
 		</swiper-slide>
 
 		<swiper-slide>
-		<div class="cards cards2">
+		<div class="cards">
 			<div class="imgBox">
 				<div>
-					<ion-icon :icon="medkitFilled"/>
+					<img src="code.png">
 					<h2>Code</h2>
 				</div>
 			</div>
@@ -64,10 +66,10 @@
 		</div>
 </swiper-slide>
 <swiper-slide>
-		<div class="cards cards3">
+		<div class="cards">
 			<div class="imgBox">
 				<div>
-					<ion-icon :icon="medkitFilled"/>
+					<img src="launch.png">
 					<h2>Launch</h2>
 				</div>
 			</div>
@@ -84,70 +86,56 @@
 		</swiper>
 	</div>
 	
+
 <ion-grid>
   <ion-row>
     <ion-col>
-	<router-link to="/tabs/tab2">
      <ion-card class="blue">
             <ion-card-header>
-            <ion-card-title style="color: black">Toxicondendrons</ion-card-title>
+            <ion-card-title style="color: white">Urishol</ion-card-title>
             </ion-card-header>
-			
             <ion-card-content style="margin:5px">
-			<ion-icon :icon="bookFilled" />
-             Learn about poisonous plants 
+              Identify if  
             </ion-card-content>
             <waves></waves>
           </ion-card>
-	</router-link>
     </ion-col>
     <ion-col>
-	<router-link  to="/tabs/tab3">
-     <ion-card class="blue tab3">
+     <ion-card class="blue">
             <ion-card-header>
-            <ion-card-title style="color: black">Object Detection</ion-card-title>
+            <ion-card-title style="color: white">Urishol</ion-card-title>
             </ion-card-header>
             <ion-card-content style="margin:5px">
-				<ion-icon :icon="bookFilled" />
-              Tap to recognize Poison Ivy
+              Lrem ipsum
             </ion-card-content>
             <waves></waves>
           </ion-card>
-	</router-link>
     </ion-col>
   </ion-row>
   <ion-row>
-	
     <ion-col class="ion-align-self-center">
-	<router-link  to="/tabs/tab4">
       <ion-card class="blue">
             <ion-card-header>
-            <ion-card-title style="color: black">Urishol</ion-card-title>
+            <ion-card-title style="color: white">Urishol</ion-card-title>
             </ion-card-header>
-			
             <ion-card-content style="margin:5px">
-				<ion-icon :icon="leafOutline" />
-              How to avoid plant rashes
+              Lrem ipsum,
             </ion-card-content>
             <waves></waves>
           </ion-card>
-	</router-link>
     </ion-col>
     <ion-col>
-	<router-link to="/tabs/tab5">
      <ion-card class="blue">
             <ion-card-header>
-            <ion-card-title style="color: black">Map</ion-card-title>
+            <ion-card-title style="color: white">Urishol</ion-card-title>
             </ion-card-header>
-			
             <ion-card-content style="margin:5px">
-			<ion-icon :icon="bookFilled" />
-              Locate plants near you
+              Lrem ipsum, 
             </ion-card-content>
             <waves></waves>
           </ion-card>
-	</router-link>
     </ion-col>
+
   </ion-row>
 </ion-grid>
           <!-- <div class="plant">
@@ -159,14 +147,13 @@
 
  
     
-       <div class="content"></div> 
+        
     </ion-content>
   </ion-page>
 </template>
 
 <script>
 import { IonPage, IonContent, IonThumbnail, IonRow, IonGrid, IonCol, IonCard, IonCardHeader, IonCardTitle, IonCardContent}  from '@ionic/vue';
-import { cameraFilled, medkitFilled, eyeOutline, mapSharp, homeFilled, bookFilled, shieldHalfOutline, leafOutline} from 'ionicons/icons';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
 // Import Swiper styles
@@ -193,19 +180,13 @@ SwiperCore.use([Pagination]);
 export default {
   name: 'homepage',
   components: { IonPage, IonContent, //IonThumbnail, 
-  IonRow, IonGrid, IonCol, IonCard, IonCardHeader, IonCardTitle, Swiper, SwiperSlide},
-  setup() {
-	return{
-		leafOutline,
-		cameraFilled, medkitFilled, eyeOutline, mapSharp, homeFilled, bookFilled, shieldHalfOutline
-	};
-  }
+  IonRow, IonGrid, IonCol, IonCard, IonCardHeader, IonCardTitle, IonCardContent, Swiper, SwiperSlide},
+
 }
 </script>
 
 
 <style scoped>
-
 .header1 {
   position: relative;
   width: 80%;
@@ -225,11 +206,9 @@ export default {
   transform: translate(-10px, 0px)
 
 }
-.content{
-	margin-bottom: 100px;
-}
+.pages{
   
-
+}
 section {
   position: relative;
   display:flex;
@@ -276,22 +255,11 @@ section {
   transform:translateY(-30%);
 }
 
-.title{
-	position: relative;
+.tssitle{
   text-align:  center;
-  transform:translateY(-50%);
-
 }
 
-.blue{
-	margin: 5px;
-	opacity: 90%;
-	color: rgb(8, 8, 8);
-}
 
-.tab3{
-	--background: linear-gradient(135deg, yellow, rgb(123, 230, 47));
-}
 
 
 
@@ -338,18 +306,18 @@ body
 	z-index: 20;
 	pointer-events: none;
 }
-.container .cards1,
-.container .cards1 .overlay
+.container .cards:nth-child(1),
+.container .cards:nth-child(1) .overlay
 {
 	background: linear-gradient(45deg,#3503ad,#f7308c)
 }
-.container .cards2,
-.container .cards2 .overlay
+.container .cards:nth-child(2),
+.container .cards:nth-child(2) .overlay
 {
 	background: linear-gradient(45deg,#ccff00,#09afff)
 }
-.container .cards3,
-.container .cards3 .overlay
+.container .cards:nth-child(3),
+.container .cards:nth-child(3) .overlay
 {
 	background: linear-gradient(45deg,#e91e63,#ffeb3b)
 }
@@ -444,17 +412,13 @@ body
 	transition: 0.2s;
 	transition-delay: 0.5s;
 }
-
 .swiperswiper{
-	visibility: visible;
-	transform: translateX(-31%)
+	background-color: transparent;
 	
 }
 
 .swiperswiper .swiperswipderslide{
 
 }
-.swiper-slide{
-	background: rgba(0,0,0, 20%);
-}
+
 </style>

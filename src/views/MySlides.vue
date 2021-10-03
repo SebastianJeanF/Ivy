@@ -19,6 +19,7 @@
         >next</ion-button
       >
     </div>
+    
   </ion-card>
 </template>
 

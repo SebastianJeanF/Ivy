@@ -6,11 +6,13 @@
         <ion-title>Sign In/Up</ion-title>
       </ion-toolbar>
     </ion-header>
-
-    <ion-content :fullscreen="true">
-      <ion-card>
+  
+    <ion-content :fullscreen="true" class="contents">
+      
+      <ion-card class="card">
+        <div class="content"></div>
         <ion-card-header>
-          <ion-card-title> Welcome to Photo Share </ion-card-title>
+          <ion-card-title> Welcome to IvyFinder </ion-card-title>
           <ion-card-subtitle> Sign In/Up </ion-card-subtitle>
         </ion-card-header>
         <ion-card-content> <!-- .prevent prevents the page from being reloaded !-->
@@ -54,6 +56,7 @@
             {{errorMsg}}
         </ion-card-content>
       </ion-card>
+    
     </ion-content>
   </ion-page>
 </template>
@@ -195,4 +198,33 @@ export default {
 .test{
   
 }
+.content{
+          background: linear-gradient(
+-71deg
+,#4a6ee0,#15c39a 95%);
+
+
+padding: 10px;
+
+
+
+}
+.card{
+  margin-top: 10px red
+
+}
+.contents{
+  position: relative;
+  background-image: url("background.jpeg");
+    background-size: cover;
+  height: 100vh;
+
+  /* transform: translateY(10%) */
+}
+ion-content{
+  --background: url("leaves.jpg") /*no-repeat center center / cover; */
+
+} 
+
+
 </style>
