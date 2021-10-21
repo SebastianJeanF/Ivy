@@ -11,14 +11,14 @@
         <ion-buttons slot="end">
           <slot name="actions-end"></slot>
         </ion-buttons>
-        <ion-title class="titcle">More about Poison Ivy</ion-title>    
+        <ion-title class="title">More about Poison Sumac</ion-title>    
       </ion-toolbar> 
   </ion-header> 
     <ion-content class="ion-content">
-          <img src="../views/poison-ivy-test2.jpg" style="aspect-ratio: 3/2"  />
+          <img src="../views/sumac-not-public.jpg" style="aspect-ratio: 3/2"  />
 
           <header class= "header2 ion-padding">
-            <h3><b>Poison Ivy</b></h3>
+            <h3><b>Poison Sumac</b></h3>
           </header>
 
           <ion-card class="blue">
@@ -27,7 +27,7 @@
             <ion-card-title style="color: white">Description</ion-card-title>
             </ion-card-header>
             <ion-card-content style="margin:5px">
-              Poison Ivy is... (to be completed)
+              Poison Sumac is... (To be completed)
             </ion-card-content>
 
           </ion-card>

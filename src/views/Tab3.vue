@@ -6,7 +6,7 @@
    </ion-toolbar> 
   </ion-header> !-->
     <ion-content class="pages">
-        <div >
+        <div>
             <div class="custom-shape-divider-top-1631325369">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                     <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
@@ -57,7 +57,9 @@ const { Camera } = Plugins;
 
 export default  {
   name: 'Tab3',
-  components: { IonPage, IonContent, IonThumbnail, IonList, IonIcon, IonButton, IonFab, IonFabButton},
+  components: { IonPage, 
+  IonContent, IonThumbnail, 
+  IonList, IonIcon, IonButton, IonFab, IonFabButton},
   data() { //or setup()
       return {
         cameraFilled,
@@ -69,7 +71,7 @@ export default  {
       const photo = await Camera.getPhoto({
         resultType: CameraResultType.Uri,
         source: CameraSource.Camera,
-        quality: 60
+        quality: 100
       });
 
       this.takenImageUrl = photo.webPath;
@@ -99,61 +101,6 @@ export default  {
 
 // We can extract one specific plugin from Plugins
 
-
-// Camera key:value pair is taken and stored into variable called camera
-// This is called object destructuring in JavaScript
-
-
-// window.onload = () => {
-//   $("#sendbutton").click(() => {
-//     imagebox = $("#imagebox");
-//     link = $("#link");
-//     input = $("#imageinput")[0];
-//     if (input.files && input.files[0]) {
-//       let formData = new FormData();
-//       formData.append("video", input.files[0]);
-//       $.ajax({
-//         url: "/detect", // fix this to your liking
-//         type: "POST",
-//         data: formData,
-//         cache: false,
-//         processData: false,
-//         contentType: false,
-//         error: function (data) {
-//           console.log("upload error", data);
-//           console.log(data.getAllResponseHeaders());
-//         },
-//         success: function (data) {
-//           console.log(data);
-//           $("#imagebox").attr("src", "static/" + data);
-//           bytestring = data["status"];
-//           image = bytestring.split("\'")[1];
-
-//           ("#link").css("visibility", "visible");
-//           ("#download").attr("href", "static/" + data);
-//           console.log(data);
-//         },
-//       });
-//     }
-//   });
-// };
-
-// function readUrl(input) {
-//   imagebox = $("#imagebox");
-//   console.log(imagebox);
-//   console.log("evoked readUrl");
-//   if (input.files && input.files[0]) {
-//     let reader = new FileReader();
-//     reader.onload = function (e) {
-//       console.log(e.target);
-
-//       imagebox.attr("src", e.target.result);
-//         imagebox.height(500);
-//         imagebox.width(800);
-//     };
-//     reader.readAsDataURL(input.files[0]);
-//   }
-// }
 
 </script>
 

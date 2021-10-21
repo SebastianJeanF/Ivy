@@ -6,11 +6,15 @@
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
+
       <ion-header collapse="condense">
         <ion-toolbar>
           <ion-title size="large">Photo Gallery</ion-title>
         </ion-toolbar>
       </ion-header>
+
+      <input type="file" @change="onFileSelected" />
+      <ion-button @click="onUpload"></ion-button>
       <ion-grid>
         <ion-row>
      <ion-col size="6" :key="photo" v-for="photo in photos">
@@ -21,7 +25,7 @@
           </ion-col> 
         </ion-row>
       </ion-grid>
-
+  
       <ion-fab vertical="bottom" horizontal="center" slot="fixed" class="button">
         <ion-fab-button  @click="takePhoto()">
           <ion-icon :icon="camera"></ion-icon>
@@ -30,8 +34,8 @@
     </ion-content>
   </ion-page>
 </template>
-
-<script lang="ts">
+"
+<script>
 import { camera, trash, close } from 'ionicons/icons';
 import {
   actionSheetController,
@@ -47,10 +51,13 @@ import {
   IonGrid,
   IonRow,
   IonCol,
+  IonButton
 } from '@ionic/vue';
 import { usePhotoGallery, UserPhoto } from '@/composables/usePhoto';
 import { defineComponent} from 'vue';
-export default ({
+import axios from 'axios';
+
+export default {
   name: 'Tab3',
   components: {
     IonHeader,
@@ -64,12 +71,19 @@ export default ({
     IonGrid,
     IonRow,
     IonCol,
-   IonImg
+    IonImg,
+    IonButton
   },
   setup() {
-    const { photos, takePhoto, deletePhoto} = usePhotoGallery();
+ 
+    
 
-    const showActionSheet = async (photo: UserPhoto) => {
+
+
+
+    const { photos, takePhoto, deletePhoto} = usePhotoGallery();
+  // the type of photo is UserPhoto
+    const showActionSheet = async (photo) => {
       const actionSheet = await actionSheetController.create({
         header: 'Photos',
         buttons: [
@@ -103,7 +117,7 @@ export default ({
     close,
     };
   },
-});
+};
 </script>
 
 <style scoped>
@@ -114,4 +128,6 @@ export default ({
 .button{
   transform: translateY(-150%)
 }
+
+
 </style>

@@ -6,45 +6,39 @@
    </ion-toolbar> 
   </ion-header> -->
     <ion-content class="content">
-
+    <img src="./bladdernut.jpg"/>
+    <div class="background">
         
-        
+    
 
 
-<header class="front">
-
-  <div class="svg-item">
-    <svg width="100%" height="100%" viewBox="0 0 40 40" class="donut">
-      <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
-      <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5"></circle>
-      <circle class="donut-segment donut-segment-2" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5" stroke-dasharray="85 15" stroke-dashoffset="25"></circle>
-      <g class="donut-text">
-
-        <text y="50%" transform="translate(0, 2)">
-          <tspan x="50%" text-anchor="middle" class="donut-percent">85%</tspan>   
-        </text>
-        <text y="60%" transform="translate(0, 2)">
-          <tspan x="50%" text-anchor="middle" class="donut-data">Allergic</tspan>   
-        </text>
-      </g>
-    </svg>
-  </div>
-<!-- https://codeconvey.com/pure-css-animated-donut-chart/ !-->
-
-
-  <div class="info"><ion-text>85% of people are allergic to urushiol. However, 
-    immunity changes as you age and through renewed exposures to poison ivy, so <strong>it 
-    is possible </strong>for an immune person to get a reaction</ion-text></div>
-
-
-	</header>
-
-    <header class="faq"><h3><b>Frequently Asked Questions</b></h3><img src="./question-mark-sign.jpg"/>
-    <h5>Look through even more common questions people have about poison ivy</h5></header> 
     <header class= "header2 ion-padding">
             <h3><b>More Information</b></h3>  
          </header>
-         
+        <hr>
+<section id="sec1">How Urushiol Invades</section>
+<section id="sec4">
+    <img class="sec4-img" src="./poison-ivy.jpg"/>
+    <div class="sec4-div1">If you suspect you come in contact with </div>
+</section>
+    <hr>
+<section id="sec1">How Urushiol Invades</section>
+<section id="sec4">
+    <img class="sec4-img" src="./poison-ivy.jpg"/>
+    <div class="sec4-div1">If you suspect you come in contact with </div>
+</section>
+    <hr>
+<section id="sec1">Is poison ivy rash contagious?</section>
+<section id="sec4">
+    <img class="sec4-img" src="./poison-ivy.jpg"/>
+    <div class="sec4-div1">If you suspect you come in contact with </div>
+</section>
+    <hr>
+<section id="sec1">Are dead poisonous plants safe?</section>
+<section id="sec4">
+    <img class="sec4-img" src="./poison-ivy.jpg"/>
+    <div class="sec4-div1">If you suspect you come in contact with </div>
+</section>
           <ion-card class="blue">
             <ion-card-header>
             <ion-card-title style="color: white">Urushiol</ion-card-title>
@@ -90,8 +84,9 @@
             </ion-card>  
           </router-link>
  </section> 
- </div>
+        </div>
       <div class="footer"></div>
+      </div>
     </ion-content>
   </ion-page>
 </template>
@@ -104,8 +99,8 @@ import { onMounted } from 'vue';
 
 export default  {
   name: 'Tab2',
-  components: { IonPage, IonContent, IonText, IonCard, IonCardContent, IonCardTitle, IonCardHeader,
-  //IonToolbar, IonHeader, 
+  components: { IonPage, IonContent, IonText, IonCard, IonCardContent, IonCardTitle, IonCardHeader, 
+//   IonToolbar, IonHeader, 
   //IonIcon
   },
 
@@ -122,12 +117,11 @@ export default  {
 *{
   box-sizing: border-box;
 }
-.faq{
-  margin: auto;
-  width: 90%;
-  background: grey;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.background{
+    background: linear-gradient(135deg, rgb(255, 255, 255),green);
+    position: absolute;
+    top: 20vh;
+    border-radius: 15px 15px
 }
 .sec{
   background: linear-gradient(45deg,#ccff0050,#09afff50);
@@ -181,8 +175,9 @@ section{
     "svg-item info"; 
   /* display: flex;
   justify-content: space-around; */
-
 }
+
+
 .info{
   text-align: center;
   grid-area: info;
@@ -249,122 +244,37 @@ section{
 .title{
   color: white;
 }
-
-
-.svg-item {
-    width: 100%;
-    font-size: 16px;
-    margin: 0 auto;
-    animation: donutfade 4s;
-    grid-area: svg-item;
-    padding-top: 5px;
-    padding-left: 5px;
+#sec1{
+	
+	height: 50px;
+	position: relative;
+	display: flex;
+	font-weight: 600;
+	font-size: 22px;
+	padding-top: 5px;
+	padding-left: 10px;
+;
 }
-
-@keyframes donutfade {
-  /* this applies to the whole svg item wrapper */
-    0% {
-        opacity: .2;
-    }
-    100% {
-        opacity: 1;
-    }
+hr {
+	position: relative;
+	margin: auto;
+	background-color: grey;
+	height: 2px;
+	border-radius: 20px;
+	margin-top: 3px;
+	width: 50%;
 }
+#sec4{
+	/* background: linear-gradient(180deg, #74f2ce, #7cffcb);*/ 
+	/* Successful Immigrant */
+	position: relative;
+	display: grid;
+	
+	grid-template-columns: 30% 67%;
 
-@media (min-width: 992px) {
-    .svg-item {
-        width: 80%;
-    }
-}
-
-.donut-ring {
-    stroke: #EBEBEB;
-}
-
-.donut-segment {
-    transform-origin: center;
-    stroke: #FF6200;
+	gap: 5px
 }
 
-.donut-segment-2 {
-    stroke: aqua;
-    animation: donut1 3s;
-}
-
-.donut-segment-3 {
-    stroke: #d9e021;
-    animation: donut2 3s;
-}
-
-.donut-segment-4 {
-    stroke: #ed1e79;
-    animation: donut3 3s;
-}
-
-.segment-1{fill:#ccc;}
-.segment-2{fill:aqua;}
-.segment-3{fill:#d9e021;}
-.segment-4{fill:#ed1e79;}
-
-.donut-percent {
-    animation: donutfadelong 1s;
-}
-
-@keyframes donutfadelong {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@keyframes donut1 {
-    0% {
-        stroke-dasharray: 0, 100;
-    }
-    100% {
-        stroke-dasharray: 85, 15;
-    }
-}
-
-.donut-text {
-    fill: #FF6200;
-}
-.donut-text-1 {
-    fill: aqua;
-}
-.donut-text-2 {
-    fill: #d9e021;
-}
-.donut-text-3 {
-    fill: #ed1e79;
-}
-
-.donut-label {
-    font-size: 0.28em;
-    font-weight: 700;
-    line-height: 1;
-    fill: #000;
-    transform: translateY(0.25em);
-}
-
-.donut-percent {
-    font-size: 0.5em;
-    line-height: 1;
-    transform: translateY(0.5em);
-    
-}
-
-.donut-data {
-    font-size: 0.12em;
-    line-height: 1;
-    transform: translateY(0.5em);
-    text-align: center;
-    text-anchor: middle;
-    color:#666;
-    fill: #666;
-    animation: donutfadelong 1s;
-}
 
 
 </style>

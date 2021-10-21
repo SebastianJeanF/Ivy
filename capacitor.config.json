@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.demo.pg.vue",
-  "appName": "Vue Photo Gallery",
+  "appId": "com.poison.Ivy",
+  "appName": "Ivy",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "dist",
@@ -11,3 +11,4 @@
   },
   "cordova": {}
 }
+

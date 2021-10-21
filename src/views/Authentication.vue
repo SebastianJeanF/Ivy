@@ -10,7 +10,7 @@
     <ion-content :fullscreen="true" class="contents">
       
       <ion-card class="card">
-        <div class="content"></div>
+        <div class="border"></div>
         <ion-card-header>
           <ion-card-title> Welcome to IvyFinder </ion-card-title>
           <ion-card-subtitle> Sign In/Up </ion-card-subtitle>
@@ -198,16 +198,11 @@ export default {
 .test{
   
 }
-.content{
+.border{
           background: linear-gradient(
 -71deg
 ,#4a6ee0,#15c39a 95%);
-
-
 padding: 10px;
-
-
-
 }
 .card{
   margin-top: 10px red
@@ -222,7 +217,7 @@ padding: 10px;
   /* transform: translateY(10%) */
 }
 ion-content{
-  --background: url("leaves.jpg") /*no-repeat center center / cover; */
+  --background: url("leaves.jpg") no-repeat center center / cover; 
 
 } 
 

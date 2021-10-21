@@ -16,8 +16,8 @@
           <ion-label>Home</ion-label>
         </ion-tab-button>
           
-        <ion-tab-button tab="tab2" class="tabtest" href="/tabs/tab2">
-          <ion-icon :icon="bookFilled" />
+        <ion-tab-button tab="tab2" class="tabtest" href="/tabs/tab2/FAQ">
+          <ion-icon :icon="leafSharp" />
           <ion-label>Info</ion-label>
         </ion-tab-button>
         
@@ -32,7 +32,7 @@
           <ion-label>Avoid</ion-label>
         </ion-tab-button>
         <ion-tab-button tab="tab5" class="tabtest" href="/tabs/tab5">
-          <ion-icon :icon="mapSharp" />
+          <ion-icon :icon="navigateSharp" />
           <ion-label>Map</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
@@ -42,7 +42,7 @@
 
 <script>
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet, IonFabButton, IonFab} from '@ionic/vue';
-import { cameraFilled, medkitFilled, eyeOutline, mapSharp, homeFilled, bookFilled, shieldHalfOutline} from 'ionicons/icons';
+import { cameraFilled, medkitFilled, eyeOutline, navigateSharp, homeFilled, bookFilled, shieldHalfOutline, leafSharp} from 'ionicons/icons';
 
 
 export default {
@@ -52,11 +52,12 @@ export default {
     return {
       cameraFilled, 
       medkitFilled,
-      mapSharp,
+      navigateSharp,
       homeFilled,
       bookFilled,
       eyeOutline,
       shieldHalfOutline,
+      leafSharp
       };
   }
 }
@@ -70,7 +71,7 @@ export default {
 
   
   border-radius: 15px 15px 0px 0px ;
-  
+ 
   
   
   
@@ -78,7 +79,6 @@ export default {
 .tabtest{
   position: relative;
   --padding-top: 4px;
-  
   --padding-bottom: 4px;
 }
 .fab{

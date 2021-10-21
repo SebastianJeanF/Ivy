@@ -92,21 +92,19 @@ export function usePhotoGallery() {
   };
 
   const takePhoto = async () => {
-    const cameraPhoto = await Camera.getPhoto({
+    const imageData = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
       quality: 100,
     });
     const fileName = new Date().getTime() + '.jpeg';
-    const savedFileImage = await savePicture(cameraPhoto, fileName);
-
+    const savedFileImage = await savePicture(imageData, fileName);
     photos.value = [savedFileImage, ...photos.value];
   };
 
   const deletePhoto = async (photo: UserPhoto) => {
     // Remove this photo from the Photos reference data array
     photos.value = photos.value.filter((p) => p.filepath !== photo.filepath);
-
     // delete photo file from filesystem
     const filename = photo.filepath.substr(photo.filepath.lastIndexOf('/') + 1);
     await Filesystem.deleteFile({

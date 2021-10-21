@@ -5,113 +5,73 @@
         <ion-title class="titcle">Welcome to IvyFinder</ion-title>    
    </ion-toolbar> 
   </ion-header> !-->
-    <ion-content class="content">
-        
-            <div class="custom-shape-divider-top-1631325369">
+    <ion-content :fullscreen="true" class="content">
+    <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
+  <linearGradient id="my-cool-gradient" x2="1" y2="1">
+    <stop offset="0%" stop-color="#447799" />
+    <stop offset="50%" stop-color="#224488" />
+    <stop offset="100%" stop-color="#112266" />
+  </linearGradient>
+</svg>
+
+	<img class="demo1" src="./background.jpeg" />
+            <!-- <div class="custom-shape-divider-top-1631325369">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                     <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
                 </svg>
-            </div>
-          
-          <header class= "header1 ion-padding">
+            </div> !-->
+          <div class="custom-shape-divider-top-1633904058">
+    <svg class="icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+    </svg>
+        </div>
+          <header class= "ion-padding">
             <div></div>
             <h3><b>Welcome to IvyFinder!</b></h3>
           </header>
-
-          <!-- <ion-ttle class="title">Explore</ion-ttle> !-->
-
-
-
-          <div class="container">
-		<swiper :spaceBetween="30" :pagination='{
-  "clickable": true
-}' class="mySwiper swiperswiper">
-			<swiper-slide class="swiperswipderslide">
-		<div class="cards cards1">
-			<div class="imgBox">
-				<div>
-					<ion-icon :icon="medkitFilled"/>
-					<h2>Design</h2>
-				</div>
-			</div>
-			<div class="overlay"></div>
-			<div class="content">
-				<h2>Design</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat.</p>
-			</div>
-		</div>
-		</swiper-slide>
-
-		<swiper-slide>
-		<div class="cards cards2">
-			<div class="imgBox">
-				<div>
-					<ion-icon :icon="medkitFilled"/>
-					<h2>Code</h2>
-				</div>
-			</div>
-			<div class="overlay"></div>
-			<div class="content">
-				<h2>Code</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat.</p>
-			</div>
-		</div>
-</swiper-slide>
-<swiper-slide>
-		<div class="cards cards3">
-			<div class="imgBox">
-				<div>
-					<ion-icon :icon="medkitFilled"/>
-					<h2>Launch</h2>
-				</div>
-			</div>
-			<div class="overlay"></div>
-			<div class="content">
-				<h2>Launch</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat.</p>
-			</div>
-		</div>
-		</swiper-slide>
-		</swiper>
-	</div>
-	
+	<ion-text class="title">Make finding poison-ivy easy</ion-text>
+          
+          
+		
+<div class="container">
+<ion-text class="title">Explore</ion-text>
+<div class="line"></div>
 <ion-grid>
   <ion-row>
     <ion-col>
-	<router-link to="/tabs/tab2">
-     <ion-card class="blue">
+	<router-link to="/tabs/tab2/Info">
+	
+     <ion-card class="blue cards cards2">
+		<div>
+			<img class="demo" src="./background.jpeg" />
             <ion-card-header>
-            <ion-card-title style="color: black">Toxicondendrons</ion-card-title>
+            <ion-card-title style="color: white">Poisonous Plants</ion-card-title>
             </ion-card-header>
 			
-            <ion-card-content style="margin:5px">
-			<ion-icon :icon="bookFilled" />
-             Learn about poisonous plants 
+            <ion-card-content class="textcontent1" style="color: white">
+			<ion-icon :icon="leafSharp" />
+             Learn more about the three rash-inducing plants 
             </ion-card-content>
             <waves></waves>
+		</div>
           </ion-card>
 	</router-link>
     </ion-col>
     <ion-col>
 	<router-link  to="/tabs/tab3">
-     <ion-card class="blue tab3">
+     <ion-card class="blue tab3 cards cards3">
+		<!-- <div class="border"></div> -->
+		<div>
+			<img class="demo" src="./bladdernut.jpg" />
             <ion-card-header>
-            <ion-card-title style="color: black">Object Detection</ion-card-title>
+            <ion-card-title style="color: white">Object Detection</ion-card-title>
             </ion-card-header>
-            <ion-card-content style="margin:5px">
-				<ion-icon :icon="bookFilled" />
-              Tap to recognize Poison Ivy
+            <ion-card-content class="textcontent1" style="color: white">
+				<ion-icon :icon="cameraFilled" />
+              Use machine learning to detect poison ivy
             </ion-card-content>
             <waves></waves>
+		</div>
           </ion-card>
 	</router-link>
     </ion-col>
@@ -120,36 +80,42 @@
 	
     <ion-col class="ion-align-self-center">
 	<router-link  to="/tabs/tab4">
-      <ion-card class="blue">
+      <ion-card class="blue cards cards1">
+		<div>
+			<img class="demo" src="./leaves.jpg" />
             <ion-card-header>
-            <ion-card-title style="color: black">Urishol</ion-card-title>
+            <ion-card-title style="color: white">Urushiol</ion-card-title>
             </ion-card-header>
 			
-            <ion-card-content style="margin:5px">
-				<ion-icon :icon="leafOutline" />
-              How to avoid plant rashes
+            <ion-card-content class="textcontent" style="color: white">
+				<ion-icon :icon="shieldHalfOutline" />
+              Learn how to avoid plant rashes
             </ion-card-content>
+		
             <waves></waves>
+		</div>
           </ion-card>
 	</router-link>
     </ion-col>
     <ion-col>
 	<router-link to="/tabs/tab5">
-     <ion-card class="blue">
+    <ion-card class="blue cards cards4 ">
+		<img class="demo" src="./test_map.png" />
             <ion-card-header>
-            <ion-card-title style="color: black">Map</ion-card-title>
+            <ion-card-title style="color: white">Map</ion-card-title>
             </ion-card-header>
 			
-            <ion-card-content style="margin:5px">
-			<ion-icon :icon="bookFilled" />
-              Locate plants near you
+            <ion-card-content class="textcontent" style="color: white">
+			<ion-icon :icon="navigateCircleSharp" />
+              Find location of plants near you
             </ion-card-content>
-            <waves></waves>
-          </ion-card>
+            <waves class="paddidng"></waves>
+    </ion-card>
 	</router-link>
     </ion-col>
   </ion-row>
 </ion-grid>
+</div>
           <!-- <div class="plant">
             <ion-thumbnail slot="end">
               <img src="./fern.png">
@@ -159,14 +125,15 @@
 
  
     
-       <div class="content"></div> 
+        <div class="content"></div>
     </ion-content>
   </ion-page>
 </template>
 
+
 <script>
-import { IonPage, IonContent, IonThumbnail, IonRow, IonGrid, IonCol, IonCard, IonCardHeader, IonCardTitle, IonCardContent}  from '@ionic/vue';
-import { cameraFilled, medkitFilled, eyeOutline, mapSharp, homeFilled, bookFilled, shieldHalfOutline, leafOutline} from 'ionicons/icons';
+import { IonPage, IonContent, IonThumbnail, IonText, IonRow, IonGrid, IonCol, IonCard, IonCardHeader, IonCardTitle, IonCardContent}  from '@ionic/vue';
+import { cameraFilled, medkitFilled, eyeOutline, navigateCircleSharp, homeFilled, bookFilled, leafSharp, shieldHalfOutline, leafOutline} from 'ionicons/icons';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
 // Import Swiper styles
@@ -177,27 +144,31 @@ import 'swiper/swiper.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 //import "swiper/css/pagination"
 
+import "swiper/components/navigation/navigation.min.css";
+
 import './style.css';
 
 
 // import Swiper core and required modules
 import SwiperCore, {
-  Pagination
+  Pagination, Navigation, History
 } from 'swiper';
 
 // install Swiper modules
-SwiperCore.use([Pagination]);
+SwiperCore.use([Pagination, Navigation, History]);
 
 
 
 export default {
   name: 'homepage',
   components: { IonPage, IonContent, //IonThumbnail, 
-  IonRow, IonGrid, IonCol, IonCard, IonCardHeader, IonCardTitle, Swiper, SwiperSlide},
+  IonRow, IonGrid, IonCol, IonCard, IonCardHeader, IonCardTitle, IonText
+  //Swiper, SwiperSlide
+  },
   setup() {
 	return{
-		leafOutline,
-		cameraFilled, medkitFilled, eyeOutline, mapSharp, homeFilled, bookFilled, shieldHalfOutline
+		leafSharp,
+		cameraFilled, medkitFilled, eyeOutline, navigateCircleSharp, homeFilled, bookFilled, shieldHalfOutline, 
 	};
   }
 }
@@ -205,20 +176,56 @@ export default {
 
 
 <style scoped>
+*{
+	box-sizing: border-box;
+  
+}
+h3{
+  margin-top: 16px;
+  margin-bottom: 10px;
+}
+.textcontent{
+	text-align: center; 
+	margin-bottom: 10px;
+	color: "white";
+}
+.textcontent1{
+	text-align: center;
+	margin-bottom: 1px;
+	color: "white";
+}
+.demo{
+opacity: 90%;
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 120px;
+  
+}
 
-.header1 {
+.demo1{
+opacity: 80%;
+  position: absolute;
+  left: 0;
+  top: 10;
+}
+
+
+header {
   position: relative;
   width: 80%;
   border-radius: 0px 30px 30px 0px;
   border: 10px black;
-  background-image: linear-gradient(135deg, greenyellow, rgb(100,192,33));
+  /* background-image: linear-gradient(135deg, greenyellow, rgb(100,192,33));#7ee8fa */
+ background-image: linear-gradient(135deg, #eefa7e, #80ff72); 
   color: rgb(20, 20, 20);
   
   margin-top: 10vh;
-  margin-bottom: 10px;
   box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.25), 6px 6px 20px 0 rgba(0, 0, 0, 0.20);
+  text-shadow: 2px 2px 4px white;
 }
-.header1 div{
+header div{
 
   border-top: 6px solid green;
   border-radius: 5px;
@@ -226,7 +233,8 @@ export default {
 
 }
 .content{
-	margin-bottom: 100px;
+	margin-bottom: 50px;
+	background: url("./bladdernut.jpg" )
 }
   
 
@@ -247,6 +255,7 @@ section {
     width: 100%;
     overflow: hidden;
     line-height: 0;
+   z-index: -1;
 }
 
 .custom-shape-divider-top-1631325369 svg {
@@ -278,23 +287,57 @@ section {
 
 .title{
 	position: relative;
-  text-align:  center;
-  transform:translateY(-50%);
+	display: flex;
+	justify-content: center;
+	text-align: center;
+  font-size: 20px;
+  padding: 8px;
+  font-weight: bold;
+	left: 10%;
+	transform: translateY(100%);
+ /* overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: block; */
+  line-height: 1em; /* a */
+  max-height: 2em; 
+  margin-bottom: 50px;
+  background: linear-gradient(135deg, #3d7045, rgb(81, 150, 81), #387442);
+  width: 80%;
+  border-radius: 10px;
+  /*box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.25), 4px 4px 20px 0 rgba(0, 0, 0, 0.20); */
+}
+.line{
+background: linear-gradient(-71deg,#4a6ee0,#15c39a 95%);
+padding: 2px;
+width: 90%;
+margin: auto;
+border-radius: 5px;
+box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.25), 4px 4px 20px 0 rgba(0, 0, 0, 0.20); 
 
 }
 
 .blue{
-	margin: 5px;
-	opacity: 90%;
+	margin: 0px;
+	opacity: 100%;
 	color: rgb(8, 8, 8);
+	box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.25), 4px 4px 8px 0 rgba(0, 0, 0, 0.20);
 }
 
 .tab3{
 	--background: linear-gradient(135deg, yellow, rgb(123, 230, 47));
 }
+ion-card-title{
+	font-size: 20px;
+	display: flex;
+	justify-content:center;
+}
 
+.border{
+background: linear-gradient(-71deg,#4a6ee0,#15c39a 95%);
+padding: 10px;
 
-
+}
 
 
 
@@ -302,29 +345,33 @@ body
 {
 	margin: 0;
 	padding: 0;
-	display: flex;
+	display: inline-flex;
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
 	background: #333;
-	font-family: 'Poppins', sans-serif;
+	/* font-family: 'Poppins', sans-serif; */
 }
 .container
 {
-	position: relative;
-	width: 1000px;
-	display: flex;
-	justify-content: space-around;
+position: relative;
+text-shadow: 2px 2px 10px black;
+border-radius: 15px 15px 0 0;
+background: linear-gradient(rgb(44, 177, 44), rgb(205, 233, 205)); 
+padding-top:20px
+
+	
 }
 .container .cards
 {
 	position: relative;
-	width: 300px;
-	height: 400px;
+	width: 43vw;
+	/* height: 400px; */
 	background: #000;
-	display: flex;
+	margin: 5px;
+	/* display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: center; */
 }
 .container .cards:before
 {
@@ -333,25 +380,29 @@ body
 	top: 0;
 	left: 0;
 	width: 50%;
-	height: 100%;
+	height: 100%; 
 	background: rgba(255,255,255,.1);
 	z-index: 20;
 	pointer-events: none;
 }
 .container .cards1,
-.container .cards1 .overlay
+.container .cards:nth-child(1) .overlay
 {
 	background: linear-gradient(45deg,#3503ad,#f7308c)
 }
 .container .cards2,
-.container .cards2 .overlay
+.container .cards:nth-child(2) .overlay
 {
 	background: linear-gradient(45deg,#ccff00,#09afff)
 }
 .container .cards3,
-.container .cards3 .overlay
+.container .cards:nth-child(3) .overlay
 {
 	background: linear-gradient(45deg,#e91e63,#ffeb3b)
+}
+.container .cards4
+{
+	background: linear-gradient(45deg,#09afff,#ccff00)
 }
 .container .cards .imgBox
 {
@@ -445,16 +496,36 @@ body
 	transition-delay: 0.5s;
 }
 
-.swiperswiper{
-	visibility: visible;
-	transform: translateX(-31%)
-	
+.custom-shape-divider-top-1633904058 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
 }
 
-.swiperswiper .swiperswipderslide{
-
+.custom-shape-divider-top-1633904058 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 55px;
+    transform: rotateY(180deg);
 }
-.swiper-slide{
-	background: rgba(0,0,0, 20%);
+
+.custom-shape-divider-top-1633904058 .shape-fill {
+    fill: #307442;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .custom-shape-divider-top-1633904058 svg {
+        width: calc(100% + 1.3px);
+        height: 90px;
+    }
+}
+.icon {
+  /* gradient and fallback color */
+  fill: url(#my-cool-gradient) #447799;
 }
 </style>
