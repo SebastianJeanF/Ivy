@@ -1,15 +1,25 @@
 <template >
   <ion-page>
-  <!-- <ion-header>
+  <ion-header>
       <ion-toolbar>
         <ion-title>Welcome to IvyFinder</ion-title>    
    </ion-toolbar> 
-  </ion-header> -->
+  </ion-header>
     <ion-content class="content">
 
         
         
-
+ <ion-card class="blue">
+            <ion-card-header>
+            <ion-card-title style="color: white">Urushiol</ion-card-title>
+            </ion-card-header>
+            <ion-card-content style="margin:5px">
+              Lrem ipsum, dolor sit amet consectetur adipisicing elit. 
+              Dolor, explicabo qui quidem quia quam cum dolore atque. 
+              Laboriosam impedit vel, porro perspiciatis, laudantium earum ipsam!
+            </ion-card-content>
+            <waves></waves>
+          </ion-card>
 
 <header class="front">
 
@@ -32,30 +42,27 @@
 <!-- https://codeconvey.com/pure-css-animated-donut-chart/ !-->
 
 
-  <div class="info"><ion-text>85% of people are allergic to urushiol. However, 
+  <div class="info"><ion-text><h6>85% of people are allergic to urushiol. However, 
     immunity changes as you age and through renewed exposures to poison ivy, so <strong>it 
-    is possible </strong>for an immune person to get a reaction</ion-text></div>
+    is possible </strong>for an immune person to get a reaction</h6></ion-text></div>
 
 
 	</header>
 
-    <header class="faq"><h3><b>Frequently Asked Questions</b></h3><img src="./question-mark-sign.jpg"/>
-    <h5>Look through even more common questions people have about poison ivy</h5></header> 
-    <header class= "header2 ion-padding">
-            <h3><b>More Information</b></h3>  
-         </header>
+  <router-link to="FAQ">
+  <header class="FAQ">
+    <h4 style="text-align: center; padding-right: 5px">
+      <b>Frequently Asked Questions</b></h4>
+    <img src="./question-mark-sign.jpg"/>
+    <h5>Look through even more common questions people have about poison ivy</h5>
+  </header> 
+  </router-link>
+
+  <header class= "header2 ion-padding">
+          <h3><b>More Information</b></h3>  
+  </header>
          
-          <ion-card class="blue">
-            <ion-card-header>
-            <ion-card-title style="color: white">Urushiol</ion-card-title>
-            </ion-card-header>
-            <ion-card-content style="margin:5px">
-              Lrem ipsum, dolor sit amet consectetur adipisicing elit. 
-              Dolor, explicabo qui quidem quia quam cum dolore atque. 
-              Laboriosam impedit vel, porro perspiciatis, laudantium earum ipsam!
-            </ion-card-content>
-            <waves></waves>
-          </ion-card>
+         
   <div class="sec">
   <ion-text class="plant-title"><strong>More on Toxicondendrons</strong></ion-text>
     
@@ -97,7 +104,7 @@
 </template>
 
 <script>
-import { IonPage, IonContent, IonCard, IonCardContent, IonCardTitle, IonCardHeader, IonToolbar, IonText, IonHeader, IonIcon, IonTabBar, IonTabButton } from '@ionic/vue';
+import { IonPage, IonContent, IonTitle, IonCard, IonCardContent, IonCardTitle, IonCardHeader, IonToolbar, IonText, IonHeader, IonIcon, IonTabBar, IonTabButton } from '@ionic/vue';
 import {leafOutline} from 'ionicons/icons';
 import { onMounted } from 'vue';
 
@@ -105,9 +112,7 @@ import { onMounted } from 'vue';
 export default  {
   name: 'Tab2',
   components: { IonPage, IonContent, IonText, IonCard, IonCardContent, IonCardTitle, IonCardHeader,
-  //IonToolbar, IonHeader, 
-  //IonIcon
-  },
+  IonToolbar, IonHeader, IonTitle},
 
   setup() {
     return{
@@ -122,12 +127,26 @@ export default  {
 *{
   box-sizing: border-box;
 }
-.faq{
+ion-card{
+  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.25), 4px 4px 8px 0 rgba(0, 0, 0, 0.20);
+}
+.FAQ{
   margin: auto;
   width: 90%;
-  background: grey;
+  background: linear-gradient(135deg, yellow, green);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 60% 40%;
+  border-radius: 10px 10px 10px 10px;
+  position: relative;
+  height: 20%
+}
+.FAQ img{
+  grid-row: span 2;
+  height: 100%;
+  border-radius: 0 10px 10px 0
+}
+.FAQ h4{
+  justify-self: end
 }
 .sec{
   background: linear-gradient(45deg,#ccff0050,#09afff50);
@@ -259,6 +278,7 @@ section{
     grid-area: svg-item;
     padding-top: 5px;
     padding-left: 5px;
+    background: rgba(128, 0, 128, 0.1)
 }
 
 @keyframes donutfade {

@@ -6,14 +6,20 @@
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
-
+      <ion-segment @ionChange="segmentChanged($event)">
+        <ion-segment-button>
+          <ion-icon :icon="leafOutline"></ion-icon><ion-label>Basics</ion-label></ion-segment-button>
+        <ion-segment-button><ion-label>Faq</ion-label></ion-segment-button>
+      </ion-segment>
       <ion-header collapse="condense">
         <ion-toolbar>
           <ion-title size="large">Photo Gallery</ion-title>
         </ion-toolbar>
       </ion-header>
 
-      <input type="file" @change="onFileSelected" />
+      <input style="display: none" type="file" @change="onFileSelected" ref="fileInput" />
+      <!-- <input style="display: none" type="file" @change="onFileSelected" ref="fileInput"/> -->
+      <ion-button @click="$refs.fileInput.click()"></ion-button> 
       <ion-button @click="onUpload"></ion-button>
       <ion-grid>
         <ion-row>
@@ -51,11 +57,14 @@ import {
   IonGrid,
   IonRow,
   IonCol,
-  IonButton
+  IonButton,
+  IonSegment,
+  IonSegmentButton
 } from '@ionic/vue';
 import { usePhotoGallery, UserPhoto } from '@/composables/usePhoto';
 import { defineComponent} from 'vue';
 import axios from 'axios';
+import { IonSegmentButton } from '@ionic/vue';
 
 export default {
   name: 'Tab3',
@@ -72,7 +81,9 @@ export default {
     IonRow,
     IonCol,
     IonImg,
-    IonButton
+    IonButton,
+    IonSegment,
+    IonSegmentButton
   },
   setup() {
  

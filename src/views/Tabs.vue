@@ -16,7 +16,7 @@
           <ion-label>Home</ion-label>
         </ion-tab-button>
           
-        <ion-tab-button tab="tab2" class="tabtest" href="/tabs/tab2/FAQ">
+        <ion-tab-button tab="tab2" class="tabtest" href="/tabs/tab2">
           <ion-icon :icon="leafSharp" />
           <ion-label>Info</ion-label>
         </ion-tab-button>
@@ -64,6 +64,10 @@ export default {
 </script>
 
 <style scoped>
+ion-tab-button{
+  font-size: 12px
+}
+
 :root {
   background: rgb(230,235,230);
 }

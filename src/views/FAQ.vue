@@ -1,10 +1,19 @@
 <template >
   <ion-page>
-  <!-- <ion-header>
-      <ion-toolbar>
-        <ion-title>Welcome to IvyFinder</ion-title>    
-   </ion-toolbar> 
-  </ion-header> -->
+  <ion-header>  
+      <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+          <ion-back-button
+            :default-href="pageDefaultBackLink"
+          ></ion-back-button>
+        </ion-buttons>
+     
+        <ion-buttons slot="end">
+          <slot name="actions-end"></slot>
+        </ion-buttons>
+        <ion-title>Other Questions</ion-title>    
+      </ion-toolbar> 
+  </ion-header> 
     <ion-content class="content">
     <img src="./bladdernut.jpg"/>
     <div class="background">
@@ -50,41 +59,6 @@
             </ion-card-content>
             <waves></waves>
           </ion-card>
-  <div class="sec">
-  <ion-text class="plant-title"><strong>More on Toxicondendrons</strong></ion-text>
-    
-  <section>     
-          <router-link class="one" to="/poison-ivy">
-          <ion-card class="red">
-            <img src="./poison-ivy-test2.jpg" style="aspect-ratio: 3/2"  />
-            <ion-card-header>
-              <ion-card-title style="color: white">Poison Ivy</ion-card-title>
-            </ion-card-header>  
-            <waves></waves>
-          </ion-card>
-          </router-link>
-
-          <router-link class="two" to="/poison-oak">
-          <ion-card class="pink">
-            <img src="./poison-oak-test.jpg" style="aspect-ratio: 3/2"  />
-            <ion-card-header>
-            <ion-card-title>Poison Oak</ion-card-title>
-            </ion-card-header>
-            <waves></waves>
-          </ion-card>
-          </router-link>
-
-          <router-link class="three" to="/poison-sumac">
-            <ion-card class="sumac-color">
-              <img src="./sumac-not-public.jpg" style="aspect-ratio: 3/2"  />
-              <ion-card-header>
-              <ion-card-title class=title>Poison Sumac</ion-card-title> 
-              </ion-card-header>
-              <waves></waves>
-            </ion-card>  
-          </router-link>
- </section> 
-        </div>
       <div class="footer"></div>
       </div>
     </ion-content>
@@ -92,16 +66,31 @@
 </template>
 
 <script>
-import { IonPage, IonContent, IonCard, IonCardContent, IonCardTitle, IonCardHeader, IonToolbar, IonText, IonHeader, IonIcon, IonTabBar, IonTabButton } from '@ionic/vue';
+import { IonPage, 
+IonContent,
+IonCard,
+IonCardContent, 
+IonCardTitle, 
+IonCardHeader,
+IonToolbar, 
+IonTitle,
+IonBackButton,
+IonButtons,
+IonHeader, 
+IonIcon,
+IonTabBar, 
+IonTabButton } 
+from '@ionic/vue';
 import {leafOutline} from 'ionicons/icons';
 import { onMounted } from 'vue';
 
 
 export default  {
   name: 'Tab2',
-  components: { IonPage, IonContent, IonText, IonCard, IonCardContent, IonCardTitle, IonCardHeader, 
-//   IonToolbar, IonHeader, 
-  //IonIcon
+  components: { IonPage, IonContent, IonCard, IonCardContent, IonCardTitle, IonCardHeader, IonTitle,
+IonBackButton,
+IonButtons,
+  IonToolbar, IonHeader
   },
 
   setup() {
@@ -121,7 +110,8 @@ export default  {
     background: linear-gradient(135deg, rgb(255, 255, 255),green);
     position: absolute;
     top: 20vh;
-    border-radius: 15px 15px
+    border-radius: 20px 20px;
+    box-shadow: 0px -4px 8px 0 rgba(21, 255, 0, 0.25), 0px -6px 20px 0 rgba(0, 0, 0, 0.20);
 }
 .sec{
   background: linear-gradient(45deg,#ccff0050,#09afff50);

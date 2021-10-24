@@ -6,13 +6,6 @@
    </ion-toolbar> 
   </ion-header> !-->
     <ion-content :fullscreen="true" class="content">
-    <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
-  <linearGradient id="my-cool-gradient" x2="1" y2="1">
-    <stop offset="0%" stop-color="#447799" />
-    <stop offset="50%" stop-color="#224488" />
-    <stop offset="100%" stop-color="#112266" />
-  </linearGradient>
-</svg>
 
 	<img class="demo1" src="./background.jpeg" />
             <!-- <div class="custom-shape-divider-top-1631325369">
@@ -25,21 +18,30 @@
         <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
     </svg>
         </div>
-          <header class= "ion-padding">
+          <header class="ion-padding">
             <div></div>
             <h3><b>Welcome to IvyFinder!</b></h3>
           </header>
 	<ion-text class="title">Make finding poison-ivy easy</ion-text>
           
           
-		
+<svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
+  <linearGradient id="my-cool-gradient">
+    <stop offset="20%" stop-color="rgb(44, 177, 44)" />
+    <stop offset="50%" stop-color="#347e48" />
+    <stop offset="100%" stop-color=" #307442" />
+
+    
+  </linearGradient>
+</svg>
+
 <div class="container">
 <ion-text class="title">Explore</ion-text>
 <div class="line"></div>
 <ion-grid>
   <ion-row>
     <ion-col>
-	<router-link to="/tabs/tab2/Info">
+	<router-link to="/tabs/tab2">
 	
      <ion-card class="blue cards cards2">
 		<div>
@@ -100,7 +102,8 @@
     <ion-col>
 	<router-link to="/tabs/tab5">
     <ion-card class="blue cards cards4 ">
-		<img class="demo" src="./test_map.png" />
+		<!-- <img class="demo" src="./test_map.png" /> -->
+    <img class="demo" src="http://127.0.0.1:5000/static/rubus.jpeg" />
             <ion-card-header>
             <ion-card-title style="color: white">Map</ion-card-title>
             </ion-card-header>
@@ -208,7 +211,8 @@ opacity: 90%;
 opacity: 80%;
   position: absolute;
   left: 0;
-  top: 10;
+  top: 10px;
+  
 }
 
 
@@ -228,7 +232,7 @@ header {
 header div{
 
   border-top: 6px solid green;
-  border-radius: 5px;
+  border-radius: 100px 100px 100px 100px;
   transform: translate(-10px, 0px)
 
 }
@@ -293,8 +297,10 @@ section {
   font-size: 20px;
   padding: 8px;
   font-weight: bold;
-	left: 10%;
-	transform: translateY(100%);
+	
+  margin: auto;
+  color: white;
+	transform: translateY(80%);
  /* overflow: hidden;
   text-overflow: ellipsis;
   word-wrap: break-word;
@@ -305,7 +311,7 @@ section {
   background: linear-gradient(135deg, #3d7045, rgb(81, 150, 81), #387442);
   width: 80%;
   border-radius: 10px;
-  /*box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.25), 4px 4px 20px 0 rgba(0, 0, 0, 0.20); */
+  box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.25), 4px 4px 20px 0 rgba(0, 0, 0, 0.20); 
 }
 .line{
 background: linear-gradient(-71deg,#4a6ee0,#15c39a 95%);
@@ -321,7 +327,7 @@ box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.25), 4px 4px 20px 0 rgba(0, 0, 0, 0.20
 	margin: 0px;
 	opacity: 100%;
 	color: rgb(8, 8, 8);
-	box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.25), 4px 4px 8px 0 rgba(0, 0, 0, 0.20);
+	box-shadow: 3px 3px 5px 0 rgba(255, 0, 0, 0.25), 4px 4px 8px 0 rgba(0, 248, 33, 0.2);
 }
 
 .tab3{
@@ -336,7 +342,6 @@ ion-card-title{
 .border{
 background: linear-gradient(-71deg,#4a6ee0,#15c39a 95%);
 padding: 10px;
-
 }
 
 
@@ -356,10 +361,9 @@ body
 {
 position: relative;
 text-shadow: 2px 2px 10px black;
-border-radius: 15px 15px 0 0;
-background: linear-gradient(rgb(44, 177, 44), rgb(205, 233, 205)); 
-padding-top:20px
-
+border-radius: 20px 20px 0 0;
+background: rgb(176, 228, 176); 
+box-shadow: 0px -4px 8px 0 rgba(0, 0, 0, 0.25), 0px -6px 20px 0 rgba(0, 0, 0, 0.20);
 	
 }
 .container .cards
@@ -393,7 +397,7 @@ padding-top:20px
 .container .cards2,
 .container .cards:nth-child(2) .overlay
 {
-	background: linear-gradient(45deg,#ccff00,#09afff)
+	background: linear-gradient(45deg,#28ee0e,#09afff)
 }
 .container .cards3,
 .container .cards:nth-child(3) .overlay
@@ -514,7 +518,8 @@ padding-top:20px
 }
 
 .custom-shape-divider-top-1633904058 .shape-fill {
-    fill: #307442;
+    /* fill: #307442; */
+    fill: url(#my-cool-gradient) #447799;
 }
 
 /** For mobile devices **/

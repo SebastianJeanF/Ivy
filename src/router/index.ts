@@ -36,19 +36,12 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/Home.vue')
       },
       {
-        path: 'tab2/',
-        component: InfoTabs,
-        children: [
-
-      {
       path: 'FAQ',
       component: () => import('@/views/FAQ.vue')
       },
       {
-      path: 'Info',
+      path: 'tab2',
       component: () => import('@/views/Info.vue')
-      }
-         ]
       },
       {
         path: 'tab3',

@@ -1,7 +1,7 @@
 <template >
   <ion-page>
   <ion-header>  
-      <ion-toolbar class="toolbar" color="dark">
+      <ion-toolbar class="toolbar" color="dark" mode="ios">
         <ion-buttons slot="start">
           <ion-back-button
             :default-href="pageDefaultBackLink"

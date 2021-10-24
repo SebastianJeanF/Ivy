@@ -23,11 +23,13 @@
     </ion-list>
     <ion-button type="submit" expand="block">Save</ion-button>
   </form>
+  <ion-button @click="takePhotos"></ion-button>
+  <img :src="image2"  alt="Awaiting model">
  </ion-content>
 </ion-page>
 </template>
 
-<script>
+<script >
 import {
   IonList,
   IonItem,
@@ -40,10 +42,16 @@ import {
   IonPage,
   IonContent
 } from "@ionic/vue";
-import { camera } from 'ionicons/icons';
-import { Plugins, CameraResultType, CameraSource } from '@capacitor/core';
 
-const { Camera } = Plugins;
+import axios from 'axios';
+import { camera } from 'ionicons/icons';
+import { Capacitor } from '@capacitor/core';
+import {
+  Camera,
+  CameraSource,
+  CameraResultType,
+  Photo,
+} from '@capacitor/camera';
 
 export default {
   emits: ["save-memory"],
@@ -64,26 +72,43 @@ export default {
       enteredTitle: "",
       enteredDescription: "",
       takenImageUrl: null,
-      camera
+      camera,
+      image2: null
     };
   },
-  methods: {
+  methods: {   
+    
     async takePhoto() {
-      const photo = await Camera.getPhoto({
+      const cameraPhoto = await Camera.getPhoto({
         resultType: CameraResultType.Uri,
         source: CameraSource.Camera,
-        quality: 60
+        quality: 100,
       });
-
-      this.takenImageUrl = photo.webPath;
+  
+      const fileName = new Date().getTime() + '.jpeg';
+      const response = await fetch(cameraPhoto.webPath);
+      const blob = await response.blob();
+      const fd = new FormData;
+      fd.append('photo', blob, fileName)
+      console.log("this is fd, or probably data", fd)
+      axios.post('http://10.0.0.22:5000/detect', fd)
+      .then((response) => {
+        console.log("Success!" + response)
+      })
+      .catch(function (e) {
+        console.log(e); 
+      })
     },
+
     submitForm() {
       const memoryData = {
         title: this.enteredTitle,
         imageUrl: this.takenImageUrl,
         description: this.enteredDescription,
       };
-      this.$emit("save-memory", memoryData);
+      // this.$emit("save-memory", memoryData);
+
+     
     },
   },
 };
